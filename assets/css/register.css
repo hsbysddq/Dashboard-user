@@ -1,0 +1,138 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.vektor img {
+    left: 8%;
+    position: absolute;
+    bottom: 35%;
+    width: 43%;
+}
+
+p {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    color: black;
+}
+
+.register {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.register-form {
+    position: absolute;
+    right: 12%;
+    padding: 20px;
+    background-color: #ff9566 !important;
+    border-radius: 10px !important;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    background: white;
+    color: black;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus{
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    margin: 0;
+}
+
+.card-title {
+    font-weight: 900;
+    padding-top: 20px;
+}
+
+.btn {
+    background: #6dbbe1 !important;
+    color: white !important;
+    font-size: 18px;
+    border-radius: 5px !important;
+    margin-bottom: 10px;
+    margin-left: 34.8%;
+}
+
+ul {
+    margin: 0;
+}
+
+nav {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #86CFEF;
+    width: 100%;
+}
+
+nav .menubar {
+    display: flex;
+
+}
+
+nav .menubar .logo {
+    font-family: "Open Sans", sans-serif;
+    font-size: 31px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 3%;
+}
+
+nav .menubar .sign-up {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 72%;
+}
+
+nav .menubar .join {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 3%;
+}
+
+nav .menubar li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .menubar li a {
+    text-decoration: none;
+    color: white;
+}
+
+.ractangle {
+    position: absolute;
+    width: 100%;
+    bottom: -35%;
+    left: 0;
+}
+
+.svg svg {
+    position: absolute;
+    bottom: -7%;
+}
