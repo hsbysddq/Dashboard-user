@@ -17,6 +17,20 @@ const viewLogin = (req, res) => {
     return res.render("login");
 };
 
+const viewUpdate = (req, res) => {
+    return res.render("update");
+};
+
+// const viewBook = async (req, res) => {
+//     Books.findOne({
+//         where: { id, }
+//         })
+    
+//     return res.render("dashboard", {
+//         books
+//     });
+// };
+
 const viewDashboard = async (req, res) => {
     const books = await  Books.findAll()
     
@@ -37,9 +51,52 @@ const createList = async (req, res) => {
       author,
       category,
 });
-
-    return res.status(301).redirect('/dashboard')
+return res.status(301).redirect('/dashboard')
 }
+
+const updateList = async (req, res) => {
+
+    await Books.update({
+        where: { id: req.params.id }
+    });
+
+
+return res.status(301).redirect('/dashboard')
+};
+
+// const { Article } = require('./models')
+// Kita lakukan query terhadap artikel
+// Artikel tersebut memiliki id yang bernilai 1
+// const updateBook = async (req, res) => {
+//     const { name, author, category } = req.body;
+// const query = {
+// where: { id: 1 }
+// }
+// Books.update({
+// approved: false
+// }, query)
+// .then(() => {
+// console.log("Buku berhasil diupdate")
+// process.exit()
+// })
+// .catch(err => {
+// console.error("Gagal mengupdate Buku!")
+// })
+
+// };
+
+// const deleteBook = async (req, res) => {
+//     const { name, author, category } = req.body;
+//     await Books.destroy({
+//         where: {
+//             name,
+//             author,
+//             category,
+//         }
+//         })
+//         return res.status(301).redirect('/dashboard')
+//     };
+    
 
 const createRegister = async (req, res, next) => {
     try {
@@ -146,4 +203,4 @@ const createRegister = async (req, res, next) => {
 
 
 
-module.exports = { viewRegister, viewLogin, viewDashboard, viewList, createRegister, createLogin, createList };
+module.exports = { viewRegister, viewLogin, viewDashboard, viewList, viewUpdate, createRegister, createLogin, createList, updateList};
