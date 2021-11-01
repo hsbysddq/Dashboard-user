@@ -29,13 +29,16 @@
       <div class="flex-container">
         <% books.forEach((book, index) => { %>
         <div class="card col-2">
-          <div class="card-body" style="background-color: #ffd8be;">
+          <div class="card-body" style="background-color: #ffd8be;" action="/book/:id" method="Delete">
             <img class="rounded-image" src="img/book.png"/>
             <h5 class="card-title"><%= book.name %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= book.category %></h6>
             <p class="card-text">Dengan membaca buku tentu dapat mengubah pola pikirmu.</p>
-            <button type="submit" class="btn" action="/update-book" method="PUT">Edit</button>
-            <button type="submit" class="btn" action="/delete-book" method="Delete">Delete</button>
+            <a href="/dashboard/update" type="" class="btn" action="/dashboard/update-book" method="UPDATE">Edit</a>
+            <form method="POST" action="/dashboard/:name?_method=DELETE" class="d-inline">
+              <input type="hidden" name="name" value="<%= book.name %>">
+              <button type="submit" class="btn">Delete</button>
+            </form>
           </div>
         </div>
         <% })%>

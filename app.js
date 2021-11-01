@@ -2,12 +2,14 @@
 require("dotenv").config();
 const path = require ("path");
 const express = require("express");
+const methodOverride = require('method-override')
 
 const userRouter = require("./routes/router");
 const sequelize = require("./models/sequalize")
 
 
 const app = express();
+app.use(methodOverride('_method'))
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

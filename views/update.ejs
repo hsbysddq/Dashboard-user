@@ -11,52 +11,36 @@
     <title>Hello, world!</title>
   </head>
   <body>
-                <!-- Main Site -->
-            <main id="site-main">
-                <div class="container">
-                    <div class="box-nav d-flex justify-between">
-                    <div class="filter">
-                        <a href="#"><i class="fas fa-angle-double-left"></i> All Users</a>
+
+    <div class="container">
+        <div style="flex-direction: column;align-items: center;margin-top: 10vh;">
+            <div class="row">
+                <form class="col s12" action="/update-book" method="PUT">
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Masukkan Judul Buku" name="name" type="text" class="validate">
+                        <label for="name">Judul Buku</label>
                     </div>
                     </div>
-                    <div class="form-title text-center">
-                        <h2 class="text-dark">Update User</h2>
-                        <span class="text-light">Use the below form to Update an account</span>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input name="author" type="text" placeholder="Masukkan Nama Pengarang" class="validate">
+                        <label for="author">Pengarang Buku</label>
+                    </div>
                     </div>
 
-                    <!-- add user form -->
-                    <!-- form handling -->
-            <form method="POST" id="update_user">
-                <div class="new_user">
-
-                    <div class="form-group">
-                        <label for="name" class="text-light">Nama Buku</label>
-                        <input type="text" name="name" value="<%= book.name %>" placeholder="Masukkan Nama Buku">
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input name="category" type="text" class="validate" placeholder="Masukkan Kategori Buku">
+                        <label for="category">Kategori</label>
                     </div>
-
-                    <div class="form-group">
-                        <label for="author" class="text-light">Pengarang</label>
-                        <input type="text" name="author" value="<%= book.name %>" placeholder="Masukkan Pengarang Buku">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category" class="text-light">Kategori</label>
-                        <input type="text" name="category" value="<%= book.category %>" placeholder="Masukkan Kategori Buku">
                     </div>
                     
-
-                    <div class="form-group">
-                        <button type="submit" class="btn text-dark update">Save</button>
-                    </div>
-
-                </div>
-            </form>
-                
-                </div>
-            </main>
-            <!-- /Main Site -->
-
-
+                    <button type="submit" class="btn btn-primary">Tambah List</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
