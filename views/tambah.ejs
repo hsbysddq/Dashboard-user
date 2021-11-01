@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/css/tambah.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Tambah List</title>
+</head>
+<body>
+    <div class="container">
+        <div style="flex-direction: column;align-items: center;margin-top: 10vh;">
+            <div class="row">
+                <form class="col s12" action="/create-list" method="POST">
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Masukkan Judul Buku" name="name" type="text" class="validate">
+                        <label for="name">Judul Buku</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input name="author" type="text" placeholder="Masukkan Nama Pengarang" class="validate">
+                        <label for="author">Pengarang Buku</label>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input name="category" type="text" class="validate" placeholder="Masukkan Kategori Buku">
+                        <label for="category">Kategori</label>
+                    </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Tambah List</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</html>

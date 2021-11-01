@@ -33,15 +33,15 @@
   <nav class="fixed-top" data-aos="fade-down" data-aos-duration="1500">
     <ul class="menubar">
       <li class="logo">
-        <a href="#">Home</a>
+        <a href="/register">Home</a>
       </li>
 
       <li class="sign-up">
-        <a href="#">REGISTER</a>
+        <a href="/register">REGISTER</a>
       </li>
 
       <li class="join">
-        <a href="#">LOGIN</a>
+        <a href="/login">LOGIN</a>
       </li>
     </ul>
   </nav>
@@ -62,6 +62,18 @@
 
         <div class="card-text">
           <form action="/create-login" method="POST">
+
+            <!-- <div class="mb-3">
+              <label for="exampleInputUsername1">Username</label>
+              <input 
+              name="username"
+              type="username" 
+              class="form-control" 
+              id="exampleInputUsername1" 
+              placeholder="Enter your username"
+              />
+            </div> -->
+
             <div class="mb-3">
               <label for="exampleInputEmail1">Email</label>
               <input 
@@ -70,7 +82,8 @@
               class="form-control" 
               id="exampleInputEmail1" 
               aria-describedby="emailHelp" 
-              placeholder="Enter your Email">
+              placeholder="Enter your Email"
+              />
             </div>
 
             <div class="mb-3">
@@ -80,7 +93,8 @@
               type="password" 
               class="form-control" 
               id="exampleInputPassword1" 
-              placeholder="Enter your password">
+              placeholder="Enter your password"
+              />
             </div>
 
             <button type="submit" class="btn">Login</button>

@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/users.model");
+const Books = require("../models/books.model");
 
 const { APP_SECRET } = process.env;
 
@@ -16,10 +17,33 @@ const viewLogin = (req, res) => {
     return res.render("login");
 };
 
+const viewDashboard = async (req, res) => {
+    const books = await  Books.findAll()
+    
+    return res.render("dashboard", {
+        books
+    });
+};
+
+const viewList = (req, res) => {
+    return res.render("tambah");
+};
+
+const createList = async (req, res) => {
+    const { name, author, category } = req.body;
+
+    await Books.create({
+      name,
+      author,
+      category,
+});
+
+    return res.status(301).redirect('/dashboard')
+}
+
 const createRegister = async (req, res, next) => {
     try {
         const { email, password } = req.body;
-        console.log(req.body);
         if (!email) {
         throw {
             message: `email must be valid`,
@@ -59,17 +83,12 @@ const createRegister = async (req, res, next) => {
 
     const token = await createToken(user.id);
 
-    return res.status(201).json({
-        msg: "succes create user",
-        user,
-        token: 'bearer $(token)'
-    });
-
+    return res.status(301).redirect('/login');
     } catch (error) {
-        next(error);
+    next(error);
     }
-
 };
+
     const createLogin = async (req, res, next) => {
     try {
         const { email, password } = req.body;
@@ -101,6 +120,7 @@ const createRegister = async (req, res, next) => {
             message: `User Not Found`,
             code: 404,
             error: `bad request`,
+            
         };
     }
 
@@ -116,18 +136,14 @@ const createRegister = async (req, res, next) => {
 
     const token = await createToken(isExist.id);
 
-    return res.status(201).json({
-        msg: "success create user",
-        token: `bearer ${token}`,
-    });
-    } catch (error) {
+    return res.status(301).redirect('/dashboard');
+  } catch (error) {
     next(error);
-    }
+  }
 };
 
 
 
 
 
-
-module.exports = { viewRegister, viewLogin, createRegister, createLogin };
+module.exports = { viewRegister, viewLogin, viewDashboard, viewList, createRegister, createLogin, createList };
